@@ -1,5 +1,7 @@
 <nav>
-
-<p>Je suis la navbar</p>
-
+  <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+       <%= t(".sign_out", default: "se déconnecter") %>
+    <% end %>
+  <% end %>
 </nav>
