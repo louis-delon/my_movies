@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  height: 15vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wrapper {
+  background-color: $light-gray;
+}
+
+#logo-item {
+  flex-grow: 1;
+}
+
+.button-secondary a {
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.button-secondary a:hover {
+  text-decoration: none;
+  color: $light-green;
+  border: 2px solid $light-green;
+}
+
+.button-ternary a {
+  color: $text-color;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 5px;
+}
+
+.button-ternary {
+
+}
