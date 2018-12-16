@@ -1,0 +1,41 @@
+.banner {
+  display:flex;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("banner-image-2");
+  align-items: center;
+  background-size: cover;
+  height: 40vh;
+  // justify-content: space-around;
+}
+
+.banner h1 {
+  color: white;
+  font-size: 40px;
+}
+
+.banner p {
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  opacity: 0.8;
+}
+
+.searchbar {
+  border-radius: 2px;
+  margin-left: 40px;
+  height: 85px;
+}
+
+.searchbar input {
+  height: 35px;
+  width: 260px;
+  border-radius: 2px;
+  // vertical-align: top;
+  // border
+}
+
+.searchbar button {
+  height: 35px;
+  width: 35px;
+  border-radius: 2px;
+  vertical-align: top;
+}
