@@ -1,7 +1,9 @@
 <nav class="wrapper">
   <div class="navbar container">
     <div id="logo-item">
-      <%= image_tag("logo", size: "50") %>
+      <%= link_to root_path do %>
+        <%= image_tag("logo_holdies", size: "90") %>
+      <% end %>
     </div>
     <% if user_signed_in? %>
       <div>
