@@ -13,6 +13,16 @@
   flex-grow: 1;
 }
 
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.profile-link {
+  margin-right: 40px;
+}
+
 .button-secondary a {
   color: $primary-color;
   border: 2px solid $primary-color;
@@ -24,7 +34,7 @@
 
 .button-secondary a:hover {
   text-decoration: none;
-  color: $light-green;
+  color: $nice-green;
   border: 2px solid $light-green;
 }
 
@@ -35,6 +45,3 @@
   margin: 5px;
 }
 
-.button-ternary {
-
-}

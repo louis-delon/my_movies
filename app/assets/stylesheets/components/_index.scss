@@ -3,6 +3,7 @@
 @import "banner";
 @import "form";
 @import "footer";
+@import "profile";
 
 $body-font: 'Roboto', sans-serif;
 $headers-font: 'Lora', serif;
@@ -10,6 +11,7 @@ $headers-font: 'Lora', serif;
 
 body {
   font-family: $body-font;
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4 {
