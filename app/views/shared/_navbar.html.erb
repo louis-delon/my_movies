@@ -6,17 +6,18 @@
       <% end %>
     </div>
     <% if user_signed_in? %>
+
+      <span>
+        <%= link_to "MES FAVORIS"  %>
+      </span>
       <div class="profile-link">
         <div class="dropdown">
           <img src="/assets/banner-image-2.jpg" alt="image profil" data-toggle="dropdown" class="avatar dropdown-toggle">
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Mon compte</a>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class=>"dropdown-item"  %>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-
       </div>
     <% else %>
       <div class="button-ternary"><%= link_to "Log In", new_user_session_path %></div>
