@@ -46,6 +46,7 @@ group :development, :test do
   gem 'factory_bot_rails' #permet de créer des jeux de données pour les tests
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'database_cleaner'
+
 end
 
 group :development do
@@ -55,7 +56,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
+  gem 'pry-byebug'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
