@@ -15,7 +15,7 @@
             <i class="fas fa-user-circle gravatar"></i>
           </div>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Mon compte</a>
+            <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class=>"dropdown-item"  %>
           </div>
         </div>
