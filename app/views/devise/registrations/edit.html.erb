@@ -1,6 +1,9 @@
 <main class="container form">
-  <div>
+  <div class="background-form">
     <h2>Editer mon profil</h2>
+
+
+    <h2>Changer de mot de passe</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
@@ -13,23 +16,25 @@
       <% end %>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "new-password",placeholder: "Changer de mot de passe" %>
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Mot de passe actuel" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password",placeholder: "Nouveau mot de passe" %>
       </div>
 
       <div class="field">
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirmation mot de passe " %>
       </div>
 
-      <div class="field">
-        <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Mot de passe actuel" %>
-      </div>
         <div class="actions">
           <%= f.submit "Mettre à jour" %>
         </div>
     <% end %>
-      <div>
-        <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes vous certain de vouloir supprimer votre compte (Attention, cette action est irréversible?" }, method: :delete, class: "btn btn-danger" %>
-      </div>
-    <%= link_to "Retour", root_path %>
+    <%= link_to "Retour", root_path %><br><br>
+    <h2>Supprimer mon compte</h2>
+    <div>
+      <%= button_to "Supprimer", registration_path(resource_name), data: { confirm: "Etes vous certain de vouloir supprimer votre compte (Attention, cette action est irréversible?" }, method: :delete, class: "btn btn-danger" %>
+    </div>
   </div>
 </main>
