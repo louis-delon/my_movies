@@ -7,7 +7,7 @@
       <%= cl_image_tag(current_user.avatar, height: 150, width: 200, crop: :fill) %>
     <% end %>
     <%= simple_form_for current_user do |f| %>
-      <%= f.input :avatar, class: "btn btn-outline-success"  %>
+      <%= f.input :avatar  %>
       <%= f.input :username %>
       <%= f.button :submit, "Mettre à jour", class: "btn btn-outline-success"  %>
     <% end %>
