@@ -12,9 +12,13 @@
       <div class="profile-link">
         <div class="dropdown">
           <div data-toggle="dropdown" class="dropdown-toggle">
-            <i class="fas fa-user-circle gravatar"></i>
+            <% if current_user.avatar.present? %>
+                  <%= cl_image_tag(@avatar, height: 50, width: 50, crop: :fill) %>
+                <% else %>
+                  <%= image_tag("default-avatar.png", height: 60, width: 60, crop: :fill)  %>
+                <% end %>
           </div>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <%= link_to "Mon compte", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class=>"dropdown-item"  %>
           </div>

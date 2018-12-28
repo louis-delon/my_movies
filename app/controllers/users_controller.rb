@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update]
 
   def show
+    @avatar = @user.avatar
   end
 
   def update
