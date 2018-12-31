@@ -1,11 +1,16 @@
-import 'form.js';
-/* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
+// import { previewFile } from './form.js';
 
 console.log('Hello World from Webpacker')
+
+
+// you can't acces functions defined in webpack
+// outside of webpack unless you attach it to `window`,
+// remove the import in `application.js`,
+// instead of `export { previewFile };`
+// do `window.previewFile = previewFile;`
+// then you'll be able to acces it in your views, add
+// `javascript_pack_tag("form")`
+// in a `content_for :after_js`,
+// and then you'll be able to change your input
+// to `<%= f.input :avatar, input_html: { onchange: 'window.previewFile()' } %>`
+

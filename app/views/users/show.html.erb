@@ -2,12 +2,13 @@
   <div class="background-form">
     <h1>Mon profil</h1>
     <% if @user.avatar.present? %>
-      <%= cl_image_tag(@avatar, height: 150, width: 200, crop: :fill) %>
+      <%= cl_image_tag(@avatar, height: 150, width: 200, crop: :fill, class: "avatar-image") %>
     <% else %>
-      <%= image_tag("default-avatar.png", height: 150, width: 150, crop: :fill)  %>
+      <%= image_tag("default-avatar.png", height: 150, width: 150, crop: :fill, class: "avatar-image") %>
     <% end %>
+    <img src="" height="200" alt="" class="photo">
     <%= simple_form_for current_user do |f| %>
-      <%= f.input :avatar  %>
+      <%= f.input :avatar, input_html: { onchange: 'window.previewFile()' } %>
       <%= f.input :username, label: "Pseudo" %>
       <%= f.button :submit, "Mettre à jour", class: "btn btn-outline-success"  %>
     <% end %>
@@ -15,3 +16,4 @@
   </div>
 </div>
 
+<%= javascript_pack_tag("form") %>
