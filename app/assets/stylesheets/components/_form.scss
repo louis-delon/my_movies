@@ -32,6 +32,10 @@
   border-radius: 4px;
 }
 
+.form input[type=text] {
+  border-color: $medium-gray;
+}
+
 .form input[type=submit] {
   margin-top: 20px;
 }

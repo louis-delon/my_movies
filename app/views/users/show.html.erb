@@ -10,7 +10,7 @@
     <%= simple_form_for current_user do |f| %>
       <%= f.input :avatar, input_html: { onchange: 'window.previewFile()' } %>
       <%= f.input :username, label: "Pseudo" %>
-      <%= f.button :submit, "Mettre à jour", class: "btn btn-outline-success"  %>
+      <%= f.button :submit, "Enregistrer", class: "btn btn-outline-success"  %>
     <% end %>
     <%= link_to "Modifier mon mot de passe", edit_user_registration_path %>
   </div>
