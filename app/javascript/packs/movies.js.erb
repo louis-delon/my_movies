@@ -1,4 +1,4 @@
-const apiKey = "<%= Rails.application.secrets.secret_key_omdb  %>"
+const apiKey = "<%= ENV['SECRET_KEY_OMDB'] %>"
 console.log(apiKey)
 const url = `https://api.themoviedb.org/4/list/1?page=1&api_key=${apiKey}&sort_by=original_order.asc`
 console.log(url)
