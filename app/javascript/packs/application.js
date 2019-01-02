@@ -1,5 +1,5 @@
 // import { previewFile } from './form.js';
-
+import { movies } from './movies.js.erb';
 console.log('Hello World from Webpacker')
 
 
