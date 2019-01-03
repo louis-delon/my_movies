@@ -1,7 +1,25 @@
 const apiKey = "<%= ENV['SECRET_KEY_OMDB'] %>"
-console.log(apiKey)
+// console.log(apiKey)
 const url = `https://api.themoviedb.org/4/list/1?page=1&api_key=${apiKey}&sort_by=original_order.asc`
-console.log(url)
-const movies = () => {
+// console.log(url)
+const movies = document.querySelector("#movies");
+// console.log(movies)
+const apiResults = () => {
+  fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+      data.results.forEach((result) => {
+        const movie =
+          `<Li>
+              ${result.original_title}
+              ${result.popularity}
+              ${result.overview}
+              <img src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="IMAGE" />
+           </Li>`;
 
+         movies.insertAdjacentHTML("beforeend", movie)
+      })
+    })
 }
+
+export { apiResults }
