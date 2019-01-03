@@ -1,0 +1,36 @@
+.movie-card h2, h3, p {
+  padding-left: 15px;
+}
+
+.movie-card {
+  display:flex;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.movie-card img {
+  height: 300px;
+}
+
+.movie-card p {
+  color: $dark;
+}
+
+.movie-card h2 {
+  font-family: $body-font;
+  font-size: 20px;
+
+}
+
+.movie-card h3 {
+  font-family: $headers-font;
+  font-size: 16px;
+
+}
+
+.movie-card p {
+  font-family: $headers-font;
+  font-size: 12px;
+  color: $dark-gray;
+}
+

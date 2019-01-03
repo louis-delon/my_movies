@@ -10,12 +10,16 @@ const apiResults = () => {
     .then((data) => {
       data.results.forEach((result) => {
         const movie =
-          `<Li>
-              ${result.original_title}
-              ${result.popularity}
-              ${result.overview}
-              <img src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="IMAGE" />
-           </Li>`;
+          ` <div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
+              <div>
+                <img src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="IMAGE" />
+              </div>
+              <div>
+                <h2> ${result.original_title} </h2>
+                <h3>Popularité: ${result.popularity}</h3>
+                <p>${result.overview}</p>
+              </div>
+            </div>`;
 
          movies.insertAdjacentHTML("beforeend", movie)
       })

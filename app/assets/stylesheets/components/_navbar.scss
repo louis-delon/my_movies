@@ -40,21 +40,21 @@
 .button-secondary a {
   color: $primary-color;
   border: 2px solid $primary-color;
-  text-decoration: none;
+  // text-decoration: none;
   padding: 10px 15px;
   margin: 5px;
   border-radius: 5px;
 }
 
 .button-secondary a:hover {
-  text-decoration: none;
+  // text-decoration: none;
   color: $nice-green;
   border: 2px solid $light-green;
 }
 
 .button-ternary a {
   color: $text-color;
-  text-decoration: none;
+  // text-decoration: none;
   padding: 10px 15px;
   margin: 5px;
 }
