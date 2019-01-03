@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = false
+  config.webpacker.check_yarn_integrity = false
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -21,6 +21,7 @@ config.webpacker.check_yarn_integrity = false
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
   # `config/secrets.yml.key`.
   config.read_encrypted_secrets = true
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
