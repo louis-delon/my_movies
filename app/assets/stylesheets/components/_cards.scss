@@ -6,6 +6,11 @@
   display:flex;
   margin-top: 20px;
   width: 500px;
+  color: $dark;
+}
+
+#movies a:hover{
+  text-decoration: none;
 }
 
 .movie-card img {
