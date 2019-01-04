@@ -1,4 +1,4 @@
-.movie-card h2, h3, p {
+.movie-card h2, h3, h4, p {
   padding-left: 15px;
 }
 
@@ -30,6 +30,12 @@
 .movie-card h3 {
   font-family: $headers-font;
   font-size: 16px;
+
+}
+
+.movie-card h4 {
+  font-family: $headers-font;
+  font-size: 14px;
 
 }
 
