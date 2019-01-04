@@ -1,6 +1,7 @@
-const apiKey = "<%= ENV['SECRET_KEY_OMDB'] %>"
+const apiKey = "<%= ENV['SECRET_KEY_THE_MOVIE_DB'] %>"
 // console.log(apiKey)
-const url = `https://api.themoviedb.org/4/list/1?page=1&api_key=${apiKey}&sort_by=original_order.asc`
+const url = `https://api.themoviedb.org/4/list/1?page=2&api_key=${apiKey}&sort_by=original_order.asc`
+// const url = 'http://www.omdbapi.com/?apikey=[99339724]&'
 // console.log(url)
 const movies = document.querySelector("#movies");
 // console.log(movies)
@@ -10,18 +11,21 @@ const apiResults = () => {
     .then((data) => {
       data.results.forEach((result) => {
         const movie =
-          `<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-            <a href="#" class="movie-card">
+          `<div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
               <div>
-                <img src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="IMAGE" />
+                <a href="#">
+                  <img src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="IMAGE" />
+                </a>
               </div>
               <div>
                 <h2> ${result.original_title} </h2>
                 <h3>Popularité: ${result.popularity}</h3>
                 <h4>Date de sortie: ${result.release_date}</h4>
                 <p>${result.overview}</p>
+                <a href="#">
+                  Détails
+                </a>
               </div>
-            </a>
           </div>`;
         movies.insertAdjacentHTML("beforeend", movie)
       })
