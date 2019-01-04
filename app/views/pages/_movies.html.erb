@@ -1,4 +1,7 @@
 <div class="container">
   <div class="row" id="movies">
+    <% @movies.each do |movie| %>
+      <%= movie.title %>
+    <% end %>
   </div>
 </div>

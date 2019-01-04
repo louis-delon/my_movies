@@ -1,6 +1,9 @@
+require 'net/http'
+require 'json'
+
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+
   end
 
   def show
@@ -17,5 +20,6 @@ class MoviesController < ApplicationController
 
   def update
   end
+
 end
 

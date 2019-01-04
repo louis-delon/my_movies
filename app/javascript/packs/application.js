@@ -1,7 +1,7 @@
 // import { previewFile } from './form.js';
-import { apiResults } from './movies.js.erb';
+// import { apiResults } from './movies.js.erb';
 console.log('Hello World from Webpacker')
-apiResults()
+// apiResults()
 
 // you can't acces functions defined in webpack
 // outside of webpack unless you attach it to `window`,
