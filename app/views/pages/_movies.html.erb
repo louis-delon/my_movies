@@ -1,7 +1,22 @@
 <div class="container">
   <div class="row" id="movies">
     <% @movies.each do |movie| %>
-      <%= movie.title %>
+      <div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        <div>
+          <img src= <%= movie.photo %> alt="IMAGE" />
+        </div>
+        <div>
+          <h2><%= movie.title %></h2>
+          <h3>Popularité: </h3>
+          <h4>Date de sortie: </h4>
+          <p><%= movie.resume %></p>
+          <a href="#">
+            Détails
+          </a>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
+
+
