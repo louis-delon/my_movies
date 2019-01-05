@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20190105142100) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type"
+    t.string "media_type"
     t.string "language"
     t.string "popularity"
     t.index ["user_id"], name: "index_movies_on_user_id"

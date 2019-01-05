@@ -7,13 +7,20 @@ def parsing(url)
   JSON.parse(response)
 end
 
+puts "destroy all users and movies"
+
 Movie.destroy_all
 User.destroy_all
 
-puts "create user"
+puts "create users"
 
-user = User.create!(
+user1 = User.create!(
   email: "louis@gmail.com",
+  password: "aaaaaa"
+  )
+
+user2 = User.create!(
+  email: "louis@holdies.com",
   password: "aaaaaa"
   )
 
@@ -31,9 +38,9 @@ movies_list["results"].each do |movie|
     resume: movie["overview"],
     photo: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
     language: movie["original_language"],
-    type: movie["media_type"],
-    popularity: movie["media_popularity"]
-    user_id: user.id
+    media_type: movie["media_type"],
+    popularity: movie["media_popularity"],
+    user_id: user1.id
     )
 end
 
