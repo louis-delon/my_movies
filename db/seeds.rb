@@ -26,7 +26,7 @@ movies_list["results"].each do |movie|
     title: movie["title"],
     resume: movie["overview"],
     photo: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
-    user_id: 18
+    user_id: 1
     )
 end
 
