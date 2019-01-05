@@ -39,7 +39,8 @@ movies_list["results"].each do |movie|
     photo: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
     language: movie["original_language"],
     media_type: movie["media_type"],
-    popularity: movie["media_popularity"],
+    popularity: movie["popularity"],
+    release_date: movie["release_date"],
     user_id: user1.id
     )
 end
