@@ -20,7 +20,7 @@
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <%= link_to "Mon compte", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Mes films",  user_movies_path(current_user), class:"dropdown-item"  %>
+            <%= link_to "Mes films", movies_path(current_user), class:"dropdown-item"  %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"dropdown-item"  %>
           </div>
         </div>

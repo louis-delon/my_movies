@@ -10,8 +10,7 @@
           <h3>Popularité: </h3>
           <h4>Date de sortie: </h4>
           <p><%= movie.resume %></p>
-          <a href="#">
-            Détails
+          <%= link_to "Détails", movie_path(movie)  %>
           </a>
         </div>
       </div>

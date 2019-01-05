@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="movie-card-details">
+    <div>
+      <img src= <%= @movie.photo %> alt="IMAGE" />
+    </div>
+    <div>
+      <h1><%= @movie.title %></h1>
+      <h2>Popularité: </h2>
+      <h3>Date de sortie: </h3>
+      <h4>Ajouté par: <%= @movie.user.username %> le <%= @movie.created_at %></h4>
+      <h4>Type: <%= @movie.type %></h4>
+      <h4>Langue: <%= @movie.language %></h4>
+      <p><%= @movie.resume %></p>
+    </div>
+  </div>
+</div>
