@@ -1,3 +1,5 @@
+require 'open-uri'
+
 def parsing(url)
   uri = URI(url)
   response = Net::HTTP.get(uri)
@@ -29,11 +31,12 @@ movies_list = parsing(movies_url)
 
 puts "create Movies form api call"
 
+
 movies_list["results"].each do |movie|
   Movie.create!(
     title: movie["title"],
     resume: movie["overview"],
-    photo: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
+    photo: open("https://image.tmdb.org/t/p/w500#{movie['poster_path']}"),
     language: movie["original_language"],
     media_type: movie["media_type"],
     popularity: movie["popularity"],
@@ -41,5 +44,3 @@ movies_list["results"].each do |movie|
     user_id: user1.id
     )
 end
-
-
