@@ -7,6 +7,11 @@
     </div>
     <% if user_signed_in? %>
       <span>
+        <%= link_to new_movie_path(current_user) do %>
+          <i class="fas fa-plus-circle"></i>
+        <% end %>
+      </span>
+      <span>
         <%= link_to "MES FAVORIS"  %>
       </span>
       <div class="profile-link">

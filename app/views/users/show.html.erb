@@ -2,9 +2,9 @@
   <div class="background-form">
     <h1>Mon profil</h1>
     <% if @user.avatar.present? %>
-      <%= cl_image_tag(@avatar, height: 150, width: 200, crop: :fill, class: "avatar-image") %>
+      <%= cl_image_tag(@avatar, height: 150, width: 200, crop: :fill, class: "image") %>
     <% else %>
-      <%= image_tag("default-avatar.png", height: 150, width: 150, crop: :fill, class: "avatar-image") %>
+      <%= image_tag("default-avatar.png", height: 150, width: 150, crop: :fill, class: "image") %>
     <% end %>
     <img src="" height="200" alt="" class="photo">
     <%= simple_form_for current_user do |f| %>

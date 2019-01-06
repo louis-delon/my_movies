@@ -1,6 +1,3 @@
-# require 'net/http'
-# require 'json'
-
 def parsing(url)
   uri = URI(url)
   response = Net::HTTP.get(uri)
