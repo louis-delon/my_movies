@@ -1,2 +1,10 @@
-<h1>Movies#edit</h1>
-<p>Find me in app/views/movies/edit.html.erb</p>
+<div class="container">
+  <div class="background-form">
+    <h1>Edit my Movie</h1>
+      <%= cl_image_tag(@movie.photo, height: 100, width: 150, crop: :fill, class: "image") %>
+      <img src="" height="200" alt="" class="photo">
+      <%= render "form" %>
+  </div>
+</div>
+
+<%= javascript_pack_tag("form") %>

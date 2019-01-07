@@ -3,15 +3,7 @@
     <h1>Ajouter un film</h1>
       <%= image_tag("placeholder-image.png", height: 100, width: 150, crop: :fill, class: "image") %>
       <img src="" height="200" alt="" class="photo">
-      <%= simple_form_for @movie do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :photo, as: :file , input_html: { onchange: 'window.previewFile()' }%>
-        <%= f.input :title %>
-        <%= f.input :resume %>
-        <%= f.input :release_date %>
-        <%= f.input :language, collection: @languages %>
-        <%= f.button :submit, "Enregistrer", class: "btn btn-outline-success"  %>
-      <% end %>
+      <%= render "form" %>
   </div>
 </div>
 
