@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @avatar = current_user.avatar if user_signed_in?
-    @movies = Movie.all
+    @movies = Movie.most_recent(6)
   end
 
 end
