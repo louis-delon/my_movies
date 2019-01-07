@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
 
+  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+
   def index
 
   end
@@ -7,11 +9,6 @@ class MoviesController < ApplicationController
   def new
     @movie = Movie.new
     @languages = %w(French English Indian German Italian)
-  end
-
-  def show
-    @movie = Movie.find(params[:id])
-    @photo = @movie.photo
   end
 
   def create
@@ -24,16 +21,28 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    @photo = @movie.photo
+  end
+
   def destroy
+    @movie.destroy
+    redirect_to movies_path
   end
 
   def edit
   end
 
   def update
+    @movie.update(params_movie)
+    redirect_to movie_path
   end
 
   private
+
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
 
   def params_movie
     params.require(:movie).permit(
@@ -44,6 +53,5 @@ class MoviesController < ApplicationController
       :release_date
       )
   end
-
 end
 
