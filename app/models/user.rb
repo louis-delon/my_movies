@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :movies, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   private
 
@@ -17,5 +18,4 @@ class User < ApplicationRecord
   # def set_avatar
   #   self.avatar = "default-avatar.png"
   # end
-
 end

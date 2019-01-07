@@ -4,6 +4,7 @@ class Movie < ApplicationRecord
   # end
   # binding.pry
   belongs_to :user
+  has_many :favorites, dependent: :destroy
   validates :title, presence: true
   validates :resume, presence: true
   validates :photo, presence: true
