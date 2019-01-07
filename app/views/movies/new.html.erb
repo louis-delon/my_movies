@@ -1,7 +1,9 @@
 <div class="container form">
   <div class="background-form">
     <h1>Ajouter un film</h1>
-      <%= image_tag("default-avatar.png", height: 150, width: 150, crop: :fill, class: "image") %>
+      <%= image_tag( height: 150, width: 150, crop: :fill, class: "image") do %>
+        <i class="far fa-image"></i>
+      <% end %>
       <img src="" height="200" alt="" class="photo">
       <%= simple_form_for @movie do |f| %>
         <%= f.error_notification %>

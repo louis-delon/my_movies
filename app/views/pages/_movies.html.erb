@@ -3,7 +3,7 @@
     <% @movies.each do |movie| %>
       <div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
         <div>
-          <img src= <%= movie.photo %> alt="IMAGE" />
+          <%= cl_image_tag(movie.photo, width:200, height: 300, :crop => :fill) %>
         </div>
         <div>
           <h2><%= movie.title %></h2>
