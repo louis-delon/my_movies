@@ -26,21 +26,45 @@ user2 = User.create!(
 puts "make api call"
 
 api_key = ENV['SECRET_KEY_THE_MOVIE_DB']
-movies_url = "https://api.themoviedb.org/4/list/1?page=2&api_key=#{api_key}&sort_by=original_order.asc"
-movies_list = parsing(movies_url)
+movies_urls = {
+  page1: "https://api.themoviedb.org/4/list/1?page=1&api_key=#{api_key}&sort_by=original_order.asc",
+  page2: "https://api.themoviedb.org/4/list/1?page=2&api_key=#{api_key}&sort_by=original_order.asc",
+  page3: "https://api.themoviedb.org/4/list/1?page=3&api_key=#{api_key}&sort_by=original_order.asc"
+  # page4: "https://api.themoviedb.org/4/list/1?page=4&api_key=#{api_key}&sort_by=original_order.asc"
+}
 
 puts "create Movies form api call"
 
-
-movies_list["results"].each do |movie|
-  Movie.create!(
-    title: movie["title"],
-    resume: movie["overview"],
-    photo: open("https://image.tmdb.org/t/p/w500#{movie['poster_path']}"),
-    language: movie["original_language"],
-    media_type: movie["media_type"],
-    popularity: movie["popularity"],
-    release_date: movie["release_date"],
-    user_id: user1.id
-    )
+movies_urls.each_value do |movies_url|
+  parsing(movies_url)["results"].each do |movie|
+    Movie.create!(
+      title: movie["title"],
+      resume: movie["overview"],
+      photo: open("https://image.tmdb.org/t/p/w500#{movie['poster_path']}"),
+      language: movie["original_language"],
+      media_type: movie["media_type"],
+      popularity: movie["popularity"],
+      release_date: movie["release_date"],
+      user_id: user1.id
+      )
+  end
 end
+
+
+# movies_list = parsing(movies_url)
+
+# puts "create Movies form api call"
+
+
+# movies_list["results"].each do |movie|
+#   Movie.create!(
+#     title: movie["title"],
+#     resume: movie["overview"],
+#     photo: open("https://image.tmdb.org/t/p/w500#{movie['poster_path']}"),
+#     language: movie["original_language"],
+#     media_type: movie["media_type"],
+#     popularity: movie["popularity"],
+#     release_date: movie["release_date"],
+#     user_id: user1.id
+#     )
+# end
