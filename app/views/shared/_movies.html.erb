@@ -11,8 +11,7 @@
           <h3>Popularité: </h3>
           <h4>Date de sortie: </h4>
           <p><%= movie.resume %></p>
-          <%= link_to "Détails", movie_path(movie)  %>
-          </a>
+          <%= link_to "Détails", user_movie_path(current_user, movie) %>
         </div>
       </div>
     <% end %>

@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20190107180740) do
     t.string "language"
     t.string "popularity"
     t.date "release_date"
-    t.integer "favorite_count"
+    t.integer "favorites_count", default: 0
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
