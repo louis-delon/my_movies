@@ -1,2 +1,7 @@
-<h1>Favorites#index</h1>
-<p>Find me in app/views/favorites/index.html.erb</p>
+<% if @movies.empty? %>
+<div class="container">
+  <h2>Vous n'avez pas ajouté de films en favoris</h2>
+</div>
+<% else %>
+  <%= render 'shared/movies' %>
+<% end %>
