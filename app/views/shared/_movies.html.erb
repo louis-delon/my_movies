@@ -1,5 +1,4 @@
 <div class="container">
-  <h2 style="text-align: center; margin:20px"> Nouveautés </h2>
   <div class="row" id="movies">
     <% @movies.each do |movie| %>
       <div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
@@ -10,7 +9,7 @@
           <h2><%= movie.title %></h2>
           <h3>Popularité: </h3>
           <h4>Date de sortie: </h4>
-          <p><%= movie.resume %></p>
+          <p><%= truncate(movie.resume, length: 180) %></p>
           <%= link_to "Détails", user_movie_path(current_user, movie) %>
         </div>
       </div>

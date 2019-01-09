@@ -1,0 +1,18 @@
+<div class="row" id="movies">
+  <% @movies.each do |movie| %>
+    <div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
+      <div>
+        <%= cl_image_tag(movie.first.photo, width:200, height: 300, :crop => :fill) %>
+      </div>
+      <div>
+        <h2><%= movie.first.title %></h2>
+        <h3>Popularité: </h3>
+        <h4>Date de sortie: </h4>
+        <p><%= truncate(movie.first.resume, length:180) %></p>
+        <%= link_to "Détails", user_movie_path(current_user, movie.first) %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
