@@ -6,9 +6,16 @@
     </div>
     <div>
       <h1><%= @movie.title %></h1>
-      <%= link_to user_movie_favorites_path(current_user, @movie), method: :post do  %>
-            <i class="far fa-heart"></i>
-          <% end %>
+      <!-- this user has already this movie as a favorite -->
+      <% if @favorite.empty? %>
+        <%= link_to user_movie_favorites_path(current_user, @movie), method: :post do  %>
+        <i class="far fa-heart empty-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to user_movie_favorite_path(current_user, @movie, @favorite), method: :delete do  %>
+        <i class="fas fa-heart full-heart"></i>
+        <% end %>
+      <% end %>
       <h2>Popularité: <%= @movie.popularity %></h2>
       <h3>Date de sortie: <%= @movie.release_date %></h3>
       <h4>Ajouté par: <%= @movie.user.username %> le <%= @movie.created_at %></h4>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update] do
     resources :favorites, only: [:index]
     resources :movies, except: [:index] do
-      resources :favorites, only: [:create]
+      resources :favorites, only: [:create, :destroy]
     end
   end
 

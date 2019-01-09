@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
 
   def show
     @photo = @movie.photo
+    @favorite = Favorite.where(movie_id: @movie.id, user_id: current_user.id )
   end
 
   def destroy
