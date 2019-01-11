@@ -9,6 +9,6 @@ class Movie < ApplicationRecord
   validates :resume, presence: true
   validates :photo, presence: true
 
-  scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }
-
+  # scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }
+  paginates_per 5
 end
