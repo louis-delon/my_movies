@@ -8,15 +8,15 @@
       <h1><%= @movie.title %></h1>
       <!-- this user has already this movie as a favorite -->
       <% if @favorite.nil? %>
-      <div class="heart">
+      <div class="favorite">
         <%= link_to user_movie_favorites_path(current_user, @movie), method: :post, remote:true do  %>
           <i class="far fa-heart"></i>
         <% end %>
       </div>
       <% else %>
-      <div class="heart">
+      <div class="favorite">
         <%= link_to user_movie_favorite_path(current_user, @movie, @favorite), method: :delete, remote:true do  %>
-          <i class="fas fa-heart full-heart"></i>
+          <i class="fas fa-heart"></i>
         <% end %>
       </div>
       <% end %>

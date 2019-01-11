@@ -1,9 +1,6 @@
-// import { previewFile } from './form.js';
 // import { apiResults } from './movies.js.erb';
-// import { changeHeartColor } from './favorite.js';
 console.log('Hello World from Webpacker')
-// changeHeartColor()
-// apiResults()
+
 
 // you can't acces functions defined in webpack
 // outside of webpack unless you attach it to `window`,
