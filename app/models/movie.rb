@@ -10,5 +10,4 @@ class Movie < ApplicationRecord
   validates :photo, presence: true
 
   # scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }
-  paginates_per 5
 end
