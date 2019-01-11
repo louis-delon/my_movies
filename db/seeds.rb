@@ -27,9 +27,9 @@ puts "make api call"
 
 api_key = ENV['SECRET_KEY_THE_MOVIE_DB']
 movies_urls = {
-  page1: "https://api.themoviedb.org/4/list/1?page=1&api_key=#{api_key}&sort_by=original_order.asc",
-  page2: "https://api.themoviedb.org/4/list/1?page=2&api_key=#{api_key}&sort_by=original_order.asc",
-  page3: "https://api.themoviedb.org/4/list/1?page=3&api_key=#{api_key}&sort_by=original_order.asc"
+  page1: "https://api.themoviedb.org/4/list/1?page=1&api_key=#{api_key}&sort_by=original_order.asc&language=fr",
+  page2: "https://api.themoviedb.org/4/list/1?page=2&api_key=#{api_key}&sort_by=original_order.asc&language=fr",
+  page3: "https://api.themoviedb.org/4/list/1?page=3&api_key=#{api_key}&sort_by=original_order.asc&language=fr"
   # page4: "https://api.themoviedb.org/4/list/1?page=4&api_key=#{api_key}&sort_by=original_order.asc"
 }
 
