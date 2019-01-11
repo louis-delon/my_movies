@@ -1,10 +1,17 @@
 class FavoritesController < ApplicationController
 
-  before_action :set_movie, only: [:create, :destroy]
+  before_action :set_movie, only: [:show, :create, :destroy]
+  before_action :set_favorite, only: [:show, :destroy]
 
   def index
+    @user = User.find(params[:user_id])
     @favorites = Favorite.where(user_id: current_user.id )
     @movies = @favorites.map { |favorite| Movie.where(id: favorite.movie_id).first}
+  end
+
+  def show
+    @photo = @movie.photo
+    @user = User.find(params[:user_id])
   end
 
   def create
@@ -23,8 +30,6 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.where(user_id: current_user.id, movie_id: @movie.id).first
-    # binding.pry
     @favorite.destroy
     respond_to do |format|
         format.html { redirect_back(fallback_location: root_path) }
@@ -42,6 +47,10 @@ class FavoritesController < ApplicationController
 
   def set_movie
     @movie = Movie.find(params[:movie_id])
+  end
+
+  def set_favorite
+    @favorite = Favorite.where(user_id: current_user.id, movie_id: @movie.id).first
   end
 
 end
