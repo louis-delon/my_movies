@@ -7,14 +7,18 @@
     <div>
       <h1><%= @movie.title %></h1>
       <!-- this user has already this movie as a favorite -->
-      <% if @favorite.empty? %>
-        <%= link_to user_movie_favorites_path(current_user, @movie), method: :post do  %>
-        <i class="far fa-heart empty-heart"></i>
+      <% if @favorite.nil? %>
+      <div class="heart">
+        <%= link_to user_movie_favorites_path(current_user, @movie), method: :post, remote:true do  %>
+          <i class="far fa-heart"></i>
         <% end %>
+      </div>
       <% else %>
-        <%= link_to user_movie_favorite_path(current_user, @movie, @favorite), method: :delete do  %>
-        <i class="fas fa-heart full-heart"></i>
+      <div class="heart">
+        <%= link_to user_movie_favorite_path(current_user, @movie, @favorite), method: :delete, remote:true do  %>
+          <i class="fas fa-heart full-heart"></i>
         <% end %>
+      </div>
       <% end %>
       <h2>Popularité: <%= @movie.popularity %></h2>
       <h3>Date de sortie: <%= @movie.release_date %></h3>
@@ -29,3 +33,25 @@
     </div>
   </div>
 </div>
+
+<!-- si je click sur "ajouter aux favoris" a partir d'un coeur vide:
+
+ => le link_to doit changer de methode pour passer sur une methode delete (changer l'attribut)
+ => l'attribut de l'icon doit doit changer pour devenir "fas full-heart"
+
+ => <a data-remote="true" rel="nofollow" data-method="post" href="/users/59/movies/282/favorites">
+          <i class="far fa-heart empty-heart"></i>
+    </a>
+
+    doit devenir
+
+  <a data-remote="true" rel="nofollow" data-method="delete" href="/users/59/movies/279/favorites/95">
+          <i class="fas fa-heart full-heart"></i>
+  </a>
+
+si je reclick sur supprimer des favoris
+
+  <a data-remote="true" rel="nofollow" data-method="post" href="/users/59/movies/282/favorites">
+          <i class="far fa-heart empty-heart"></i>
+    </a>
+ -->

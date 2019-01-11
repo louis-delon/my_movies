@@ -1,0 +1,6 @@
+var heart = document.querySelector(".heart")
+
+heart.innerHTML =
+        `<%= link_to user_movie_favorites_path(current_user, @movie), method: :post, remote:true do  %>
+          <i class="far fa-heart"></i>
+        <% end %>`
