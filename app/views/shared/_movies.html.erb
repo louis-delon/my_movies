@@ -10,6 +10,13 @@
           <h3>Popularité: </h3>
           <h4>Date de sortie: </h4>
           <p><%= truncate(movie.resume, length: 180) %></p>
+          <% if movie.favorites_count == 0 %>
+            <p><%= movie.favorites_count %><i class="fas fa-star"></i></p>
+          <% elsif movie.favorites_count >= 1 && movie.favorites_count < 10 %>
+            <p style="color:green"><%= movie.favorites_count %><i class="fas fa-star"></i></p>
+          <% else %>
+            <p style="color:orange"><%= movie.favorites_count %><i class="fas fa-star"></i></p>
+          <% end %>
           <%= link_to "Détails", user_movie_path(current_user, movie) %>
         </div>
       </div>
