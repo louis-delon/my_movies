@@ -3,8 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @avatar = current_user.avatar if user_signed_in?
-    @movies = Movie.order('created_at DESC').page(params[:page]).per(10)
-    # @movies = Movie.most_recent(6)
+    @movies = Movie.most_recent.page(params[:page]).per(10)
   end
 
 end
