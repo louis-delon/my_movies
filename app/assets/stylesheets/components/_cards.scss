@@ -9,6 +9,14 @@
   margin-top: 20px;
   width: 500px;
   color: $dark;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background: white;
+  padding: 0px !important;
+  margin: 10px;
+  max-width: 500px !important;
+}
+#movies {
+  justify-content: center;
 }
 #movies a:hover{
   text-decoration: none;
@@ -38,13 +46,8 @@
   display:flex;
   margin-top: 20px;
   color: $dark;
-}
-.movie-card-details {
   height: 600px;
 }
-.movie-card-details {
-  height: 600px;
-}
-.movie-card-details h1, h2, h3, p{
+.movie-card-details h1, h2, h3, p {
   padding-left: 20px;
 }

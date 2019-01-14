@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new(params_movie)
     @movie.user = @user
     if @movie.save!
-      redirect_to root_path
+      redirect_to own_movies_path(@user)
     else
       render :new
     end
