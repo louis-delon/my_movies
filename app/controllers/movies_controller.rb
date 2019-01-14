@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
 
   def update
     @movie.update(params_movie)
-    redirect_to user_movie_path(@user, @movie), notice: "Votre film a été mis à jour"
+    redirect_to movie_path(@movie), notice: "Votre film a été mis à jour"
   end
 
   private
@@ -48,7 +48,7 @@ class MoviesController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
   def params_movie

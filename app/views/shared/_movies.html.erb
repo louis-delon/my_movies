@@ -18,7 +18,7 @@
           <% else %>
             <p style="color:orange"><%= movie.favorites_count %><i class="fas fa-star"></i></p>
           <% end %>
-          <%= link_to "Détails", user_movie_path(current_user, movie) %>
+          <%= link_to "Détails", movie_path( movie) %>
         </div>
       </div>
     <% end %>

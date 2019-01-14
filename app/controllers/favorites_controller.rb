@@ -2,6 +2,8 @@ class FavoritesController < ApplicationController
 
   before_action :set_movie, only: [:show, :create, :destroy]
   before_action :set_favorite, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :create, :destroy]
+
 
   def index
     @user = User.find(params[:user_id])
@@ -11,7 +13,6 @@ class FavoritesController < ApplicationController
 
   def show
     @photo = @movie.photo
-    @user = User.find(params[:user_id])
   end
 
   def create
@@ -41,8 +42,12 @@ class FavoritesController < ApplicationController
 
   def instantiate_favorite
     @favorite = Favorite.new
-    @favorite.user = current_user
+    @favorite.user = @user
     @favorite.movie = @movie
+  end
+
+  def set_user
+    @user = current_user
   end
 
   def set_movie

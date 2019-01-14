@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update] do
     resources :favorites, only: [:index]
     resources :movies, except: [:index] do
-      resources :favorites, only: [:create, :destroy, :show]
+      resources :favorites, only: [:show, :create, :destroy]
     end
   end
 
-  resources :movies, only: [:index]
+  resources :movies, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
