@@ -1,14 +1,18 @@
 class MoviesController < ApplicationController
 
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [ :show, :create, :edit, :update, :destroy]
+  before_action :set_user, only: [ :show, :create, :edit, :update, :destroy, :own_movies]
 
   def index
     @movies = Movie.all.page(params[:page]).per(10)
   end
 
   def new_movies
-    @movies = Movie.order('created_at DESC').page(params[:page]).per(10)
+    @movies = Movie.most_recent.page(params[:page]).per(10)
+  end
+
+  def own_movies
+    @movies = Movie.own_movies(@user).page(params[:page]).per(10)
   end
 
   def new
