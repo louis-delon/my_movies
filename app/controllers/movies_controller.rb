@@ -4,6 +4,11 @@ class MoviesController < ApplicationController
   before_action :set_user, only: [ :show, :create, :edit, :update, :destroy]
 
   def index
+    @movies = Movie.all.page(params[:page]).per(10)
+  end
+
+  def new_movies
+    @movies = Movie.order('created_at DESC').page(params[:page]).per(10)
   end
 
   def new

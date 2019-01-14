@@ -8,4 +8,7 @@ class Movie < ApplicationRecord
   validates :photo, presence: true
 
   # scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }
+  scope :most_popular, -> () { order("favorite_count desc") }
+
+
 end

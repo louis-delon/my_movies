@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'pages#home'
+  get '/new_movies', to: 'movies#new_movies', as: :news
 
   resources :users, only: [:show, :update] do
     resources :favorites, only: [:index]
