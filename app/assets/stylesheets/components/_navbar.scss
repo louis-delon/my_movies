@@ -1,9 +1,12 @@
+
 .navbar-content {
   display: flex;
   height: 15vh;
   justify-content: space-around;
   align-items: center;
 }
+
+
 
 .navbar-select-movies {
   display: flex;
@@ -76,3 +79,6 @@
   margin: 5px;
 }
 
+@media all and (max-width: 780px) {
+  #navbar-favorite-link { display: none; }
+}
