@@ -1,10 +1,10 @@
 <% if @movies.empty? %>
   <div class="container">
-    <h2>Vous n'avez pas ajouté de films en favoris</h2>
+    <h1 class="first_title">Vous n'avez pas ajouté de films en favoris</h1>
   </div>
 <% else %>
   <div class="container">
-    <h2 style="text-align: center; margin:20px"> Mes favoris </h2>
+    <h1 class="first_title"> Mes favoris </h1>
     <%= render 'favorites-movies' %>
   </div>
 <% end %>
