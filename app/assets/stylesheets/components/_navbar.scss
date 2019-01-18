@@ -8,7 +8,9 @@
 
 .navbar-movies-links {
   display: flex;
-  height: 5vh;
+  // height: 5vh;
+  height: 85px;
+  padding-top: 11px;
   justify-content: space-around;
   align-items: center;
 }
@@ -25,6 +27,30 @@
 #navbar-movies-links-color {
   background-color: $light-gray;
 }
+
+.navbar-search {
+  border-radius: 2px;
+  margin-left: 20px;
+}
+
+.navbar-search input {
+  height: 35px;
+  width: 260px;
+  border-radius: 6px;
+  border-width: 0px;
+  // vertical-align: top;
+  // border
+}
+
+.navbar-search input[type=submit] {
+  height: 35px;
+  width: 75px;
+  border-radius: 6px;
+  border-width: 0px;
+  // vertical-align: top;
+}
+
+
 
 .navbar-avatar {
   border-radius: 50%;

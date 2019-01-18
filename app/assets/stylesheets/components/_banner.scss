@@ -23,14 +23,14 @@
   font-size: 40px;
 }
 
-.searchbar {
+.banner-search {
   border-radius: 2px;
   margin-left: 20px;
   height: 85px;
   padding-top: 11px;
 }
 
-.searchbar input {
+.banner-search input {
   height: 35px;
   width: 260px;
   border-radius: 6px;
@@ -39,9 +39,9 @@
   // border
 }
 
-.searchbar button {
+.banner-search input[type=submit] {
   height: 35px;
-  width: 35px;
+  width: 75px;
   border-radius: 6px;
   border-width: 0px;
   // vertical-align: top;
