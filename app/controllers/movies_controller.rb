@@ -4,7 +4,11 @@ class MoviesController < ApplicationController
   before_action :set_user, only: [ :show, :create, :edit, :update, :destroy, :own_movies]
 
   def index
-    @movies = Movie.all.page(params[:page]).per(10)
+    if params[:q]
+      @movies = Movie.search_by_title_and_resume(params[:q]).page(params[:page]).per(10)
+    else
+      @movies = Movie.all.page(params[:page]).per(10)
+    end
   end
 
   def new_movies

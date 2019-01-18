@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
 
   include PgSearch
-    pg_search_scope :search_by_title_and_syllabus,
+    pg_search_scope :search_by_title_and_resume,
       against: [ :title, :resume ],
       using: {
         tsearch: { prefix: true }

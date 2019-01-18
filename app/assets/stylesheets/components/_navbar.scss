@@ -6,24 +6,25 @@
   align-items: center;
 }
 
-
-
-.navbar-select-movies {
+.navbar-movies-links {
   display: flex;
   height: 5vh;
   justify-content: space-around;
   align-items: center;
 }
 
-.navbar-select-movies a {
+.navbar-movies-links a {
   color: $dark-gray;
   font-size: 15px;
 }
 
- .navbar-select-movies :last-child {
+.navbar-movies-links :last-child {
   flex-grow:1;
+}
 
- }
+#navbar-movies-links-color {
+  background-color: $light-gray;
+}
 
 .navbar-avatar {
   border-radius: 50%;
