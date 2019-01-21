@@ -5,10 +5,9 @@
       <div>
         <%= cl_image_tag(movie.photo, width:200, height: 300, :crop => :fill) %>
       </div>
-      <div>
+      <div class="movie-list-details">
         <h2><%= movie.title %></h2>
-        <h3>Popularité: </h3>
-        <h4>Date de sortie: </h4>
+        <h4>Date de sortie: <%= movie.release_date %></h4>
         <p><%= truncate(movie.resume, length:180) %></p>
         <%= link_to "Détails", user_movie_favorite_path(@user, movie, favorite) %>
       </div>

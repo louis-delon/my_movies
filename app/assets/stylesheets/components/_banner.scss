@@ -31,7 +31,7 @@
 }
 
 .banner-search input {
-  height: 35px;
+  height: 40px;
   width: 260px;
   border-radius: 6px;
   border-width: 0px;
@@ -39,10 +39,11 @@
   // border
 }
 
-.banner-search input[type=submit] {
-  height: 35px;
-  width: 75px;
+.banner-search button {
+  height: 40px;
+  width: 45px;
   border-radius: 6px;
   border-width: 0px;
+  cursor: pointer;
   // vertical-align: top;
 }

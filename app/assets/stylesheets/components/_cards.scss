@@ -1,13 +1,25 @@
-.movie-card h2, h3, h4, p, a {
-  padding-left: 15px;
+.page-item.active .page-link {
+    // color: $nice-green !important;
+    background-color: $nice-green !important;
+    border-color: $nice-green !important;
+    color: white !important;
 }
-.movie-card h3, h4, p {
-  font-family: $headers-font;
+
+
+.pagination {
+  margin-left: 42px;
 }
+
+.page-item .page-link {
+    z-index: 1;
+    color: $nice-green !important;
+    border-color: $nice-green !important;
+}
+
 .movie-card {
   display:flex;
   margin-top: 20px;
-  width: 500px;
+  max-width: 500px;
   color: $dark;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   background: white;
@@ -20,6 +32,12 @@
     transform: translateY(-2px);
     box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.15);
   }
+}
+.movie-card h2, h3, h4, p, a {
+  padding-left: 15px;
+}
+.movie-card h3, h4, p {
+  font-family: $headers-font;
 }
 #movies {
   justify-content: center;
@@ -45,9 +63,34 @@
   font-size: 14px;
 }
 .movie-card p {
-  font-size: 12px;
+  font-size: 14px;
   color: $dark-gray;
 }
+
+.movie-list-details {
+  position: relative;
+  width: 300px;
+}
+
+.movie-list-details a {
+  text-decoration: none;
+  color: $nice-green;
+  position: absolute;
+  bottom: 10px;
+  left: 110px;
+  border: 1px solid $nice-green;
+  border-radius: 6px;
+  padding: 7px;
+  &:hover {
+    background-color: $nice-green;
+    color: white;
+  }
+}
+
+.movie-list-details h2 {
+  padding-top: 15px;
+}
+
 .movie-card-details {
   display:flex;
   margin-top: 20px;
@@ -56,4 +99,11 @@
 }
 .movie-card-details h1, h2, h3, p {
   padding-left: 20px;
+}
+
+.movie-card-favorite {
+  font-size: 14px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }

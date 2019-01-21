@@ -5,17 +5,17 @@
         <div>
           <%= cl_image_tag(movie.photo, width:200, height: 300, :crop => :fill) %>
         </div>
-        <div>
+        <div class="movie-list-details">
           <h2><%= movie.title %></h2>
-          <h3>Popularité: </h3>
-          <h4>Date de sortie: </h4>
+          <!-- <h3>Popularité: </h3> -->
+          <h4>Date de sortie: <%= movie.release_date %> </h4>
           <p><%= truncate(movie.resume, length: 180) %></p>
           <% if movie.favorites_count == 0 %>
-            <p><%= movie.favorites_count %><i class="fas fa-star"></i></p>
+            <h5 class="movie-card-favorite"><%= movie.favorites_count %><i class="fas fa-star"></i></h5>
           <% elsif movie.favorites_count >= 1 && movie.favorites_count < 10 %>
-            <p style="color:green"><%= movie.favorites_count %><i class="fas fa-star"></i></p>
+            <h5  class="movie-card-favorite" style="color:green"><%= movie.favorites_count %><i class="fas fa-star"></i></h5>
           <% else %>
-            <p style="color:orange"><%= movie.favorites_count %><i class="fas fa-star"></i></p>
+            <h5  class="movie-card-favorite" style="color:orange"><%= movie.favorites_count %><i class="fas fa-star"></i></h5>
           <% end %>
           <%= link_to "Détails", movie_path( movie) %>
         </div>
