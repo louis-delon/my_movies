@@ -1,17 +1,7 @@
 <div class="row" id="movies">
   <% @movies.each do |movie| %>
     <% favorite = Favorite.where(user_id: @user.id, movie_id: movie.id).first %>
-    <div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
-      <div>
-        <%= cl_image_tag(movie.photo, width:200, height: 300, :crop => :fill) %>
-      </div>
-      <div class="movie-list-details">
-        <h2><%= movie.title %></h2>
-        <h4>Date de sortie: <%= movie.release_date %></h4>
-        <p><%= truncate(movie.resume, length:180) %></p>
-        <%= link_to "Détails", user_movie_favorite_path(@user, movie, favorite) %>
-      </div>
-    </div>
+      <%= render 'shared/movie-card', movie: movie %>
   <% end %>
 </div>
 

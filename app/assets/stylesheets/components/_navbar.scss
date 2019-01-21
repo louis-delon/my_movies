@@ -4,27 +4,27 @@
   height: 5vh;
   justify-content: space-around;
   align-items: center;
+  padding-top: 25px;
 }
 
-.navbar-movies-links {
+.navbar-bottom-line {
   display: flex;
-  // height: 5vh;
   height: 85px;
   padding-top: 11px;
   justify-content: space-around;
   align-items: center;
 }
 
-.navbar-movies-links a {
+.navbar-bottom-line a {
   color: $dark-gray;
   font-size: 15px;
 }
 
-.navbar-movies-links :last-child {
+.navbar-bottom-line :last-child {
   flex-grow:1;
 }
 
-#navbar-movies-links-color {
+#navbar-bottom-line-color {
   background-color: $light-gray;
 }
 
@@ -104,3 +104,7 @@
 @media all and (max-width: 780px) {
   #navbar-favorite-link { display: none; }
 }
+
+@media all and (max-width: 780px) {
+  .navbar-bottom-line a { display: none; }
+ }

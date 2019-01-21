@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row" id="movies">
+    <% @movies.each do |movie| %>
+      <%= render 'shared/movie-card', movie: movie %>
+    <% end %>
+  </div><br>
+  <%= paginate(@movies) %>
+</div>
+
+
