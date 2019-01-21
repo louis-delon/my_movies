@@ -1,0 +1,24 @@
+.search-form {
+  border-radius: 2px;
+  margin-left: 30px;
+  height: 62px;
+  padding-top: 11px;
+}
+
+.search-form input {
+  height: 40px;
+  width: 260px;
+  border-radius: 6px;
+  border-width: 0px;
+  // vertical-align: top;
+  // border
+}
+
+.search-form button {
+  height: 40px;
+  width: 45px;
+  border-radius: 6px;
+  border-width: 0px;
+  cursor: pointer;
+  // vertical-align: top;
+}
