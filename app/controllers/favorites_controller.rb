@@ -1,8 +1,8 @@
 class FavoritesController < ApplicationController
 
   before_action :set_movie, only: [:show, :create, :destroy]
-  before_action :set_favorite, only: [:show, :destroy]
   before_action :set_user, only: [:show, :create, :destroy]
+  before_action :set_favorite, only: [:show, :destroy]
 
 
   def index

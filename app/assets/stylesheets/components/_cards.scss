@@ -77,10 +77,44 @@
   display:flex;
   margin-top: 20px;
   color: $dark;
-  height: 600px;
+  height: 450px;
 }
+
 .movie-card-details h1, h2, h3, p {
   padding-left: 20px;
+}
+
+.movie-card-details img {
+  height: 450px;
+  width: 300px;
+}
+
+@media all and (max-width: 780px) {
+  .movie-card-details img {
+    width: 300px;
+    height: 450px;
+  }
+
+  .movie-card-details {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.movie-card-details h1 {
+  font-size: 18px;
+}
+
+.movie-card-details h2 {
+  font-size: 16px;
+}
+
+.movie-card-details h3 {
+  font-size: 14px;
+}
+
+.movie-card-details h4 {
+  font-size: 12px;
 }
 
 .movie-card-favorite {

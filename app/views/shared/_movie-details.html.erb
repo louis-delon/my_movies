@@ -1,7 +1,8 @@
 <div class="movie-card-details">
   <div>
-    <%= cl_image_tag(@photo, height: 300, width: 200, crop: :fill, class: "image") %>
+    <%= cl_image_tag(@photo, crop: :fill, class: "image") %>
   </div>
+
   <div>
     <h1><%= @movie.title %></h1>
     <!-- this user has already this movie as a favorite -->
@@ -18,10 +19,9 @@
       <% end %>
     </div>
     <% end %>
-    <h2>Popularité: <%= @movie.popularity %></h2>
-    <h3>Date de sortie: <%= @movie.release_date %></h3>
-    <h4>Ajouté par: <%= @movie.user.username %> le <%= @movie.created_at %></h4>
-    <h4>Type: <%= @movie.media_type %></h4>
+
+    <h3>Date de sortie: <%= @movie.release_date.strftime("%d/%m/%Y") %></h3>
+    <h4>Ajouté par: <%= @movie.user.username %> le <%= @movie.created_at.strftime("%d/%m/%Y") %></h4>
     <h4>Langue: <%= @movie.language %></h4>
     <p><%= @movie.resume %></p>
     <% if @movie.user == @user %>
@@ -30,3 +30,4 @@
     <% end %>
   </div>
 </div>
+

@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [ :show, :create, :edit, :update, :destroy, :own_movies]
+  before_action :set_movie, only: [:show, :edit, :update, :destroy, :new_movies_show]
+  before_action :set_user, only: [ :show, :create, :edit, :update, :destroy, :own_movies, :new_movies_show]
 
   def index
     if params[:q]
@@ -13,6 +13,11 @@ class MoviesController < ApplicationController
 
   def new_movies
     @movies = Movie.most_recent.page(params[:page]).per(10)
+  end
+
+  def new_movies_show
+    @photo = @movie.photo
+    @favorite = Favorite.where(movie_id: @movie.id, user_id: current_user.id ).first
   end
 
   def own_movies

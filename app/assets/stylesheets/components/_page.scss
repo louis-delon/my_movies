@@ -1,0 +1,10 @@
+.full-page {
+  min-height: calc(100vh - 262px);
+  margin-bottom: 0px !important;
+}
+
+@media all and (max-width: 780px) {
+  .full-page {
+      min-height: calc(100vh );
+  }
+}

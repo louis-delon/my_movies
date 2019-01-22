@@ -13,6 +13,14 @@
     <% else %>
       <h5  class="movie-card-favorite" style="color:orange"><%= movie.favorites_count %><i class="fas fa-star"></i></h5>
     <% end %>
-    <%= link_to "Détails", movie_path( movie) %>
+
+    <% if params["controller"] == "favorites" %>
+      <% favorite = Favorite.where(user_id: @user.id, movie_id: movie.id).first %>
+      <%= link_to "Détails",  user_movie_favorite_path(@user, movie, favorite) %>
+    <% elsif params["action"] == "new_movies" %>
+      <%= link_to "Détails", new_movies_movie_path(movie) %>
+    <% else %>
+      <%= link_to "Détails", movie_path(movie) %>
+    <% end %>
   </div>
 </div>
