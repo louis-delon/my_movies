@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 
   before_action :set_movie, only: [:show, :edit, :update, :destroy, :new_movies_show]
   before_action :set_user, only: [ :show, :create, :edit, :update, :destroy, :own_movies, :new_movies_show]
+  before_action :set_favorite, only: [ :new_movies_show, :show ]
 
   def index
     if params[:q]
@@ -16,8 +17,6 @@ class MoviesController < ApplicationController
   end
 
   def new_movies_show
-    @photo = @movie.photo
-    @favorite = Favorite.where(movie_id: @movie.id, user_id: current_user.id ).first
   end
 
   def own_movies
@@ -41,8 +40,6 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @photo = @movie.photo
-    @favorite = Favorite.where(movie_id: @movie.id, user_id: current_user.id ).first
   end
 
   def destroy
@@ -67,6 +64,11 @@ class MoviesController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_favorite
+    @photo = @movie.photo
+    @favorite = Favorite.where(movie_id: @movie.id, user_id: current_user.id ).first
   end
 
   def params_movie
