@@ -52,6 +52,23 @@
 .movie-list-details {
   position: relative;
   width: 300px;
+  padding: 10px;
+}
+
+@media all and (max-width: 780px) {
+ .movie-list-details p {
+  font-size: 12px;
+  }
+  .movie-list-details h2 {
+  font-size: 18px;
+  }
+  .movie-list-details h4 {
+  font-size: 13px;
+  }
+}
+
+.movie-list-details p {
+  text-align: justify;
 }
 
 .movie-list-details a {
@@ -123,3 +140,10 @@
   bottom: 15px;
   right: 15px;
 }
+
+.movie-text {
+  max-width: 570px;
+  text-align: justify;
+}
+
+

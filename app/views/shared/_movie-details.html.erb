@@ -3,7 +3,7 @@
     <%= cl_image_tag(@photo, crop: :fill, class: "image") %>
   </div>
 
-  <div>
+  <div class="movie-text">
     <h1><%= @movie.title %></h1>
     <!-- this user has already this movie as a favorite -->
     <% if @favorite.nil? %>
