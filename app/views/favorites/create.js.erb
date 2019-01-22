@@ -1,6 +1,13 @@
 var favorite = document.querySelector(".favorite")
 
 favorite.innerHTML =
-        `<%= link_to user_movie_favorite_path(current_user, @movie, @favorite), method: :delete, remote:true do  %>
-          <i class="fas fa-heart"></i>
-        <% end %>`
+  `<%= link_to user_movie_favorite_path(current_user, @movie, @favorite), method: :delete, remote:true do  %>
+    <i class="fas fa-heart" style="font-size:35px"></i>
+  <% end %>`
+
+
+
+
+
+
+

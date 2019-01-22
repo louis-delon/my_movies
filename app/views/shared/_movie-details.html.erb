@@ -7,17 +7,17 @@
     <h1><%= @movie.title %></h1>
     <!-- this user has already this movie as a favorite -->
     <% if @favorite.nil? %>
-    <div class="favorite">
-      <%= link_to user_movie_favorites_path(@user, @movie), method: :post, remote:true do  %>
-        <i class="far fa-heart"></i>
-      <% end %>
-    </div>
-    <% else %>
-    <div class="favorite">
-      <%= link_to user_movie_favorite_path(@user, @movie, @favorite), method: :delete, remote:true do  %>
-        <i class="fas fa-heart"></i>
-      <% end %>
-    </div>
+      <div class="favorite">
+        <%= link_to user_movie_favorites_path(@user, @movie), method: :post, remote:true do  %>
+          <i class="far fa-heart" style="font-size:35px"></i>
+        <% end %>
+      </div>
+      <% else %>
+      <div class="favorite">
+        <%= link_to user_movie_favorite_path(@user, @movie, @favorite), method: :delete, remote:true do  %>
+          <i class="fas fa-heart" style="font-size:35px"></i>
+        <% end %>
+      </div>
     <% end %>
 
     <h3>Date de sortie: <%= @movie.release_date.strftime("%d/%m/%Y") %></h3>
