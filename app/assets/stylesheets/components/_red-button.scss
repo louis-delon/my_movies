@@ -1,0 +1,12 @@
+.button-red {
+  text-decoration: none;
+  color: $red;
+  border: 1px solid $red;
+  border-radius: 6px;
+  padding: 7px;
+  &:hover {
+    background-color: $red;
+    color: white;
+    text-decoration: none;
+  }
+}

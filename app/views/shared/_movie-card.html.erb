@@ -1,5 +1,6 @@
 <div class="movie-card col-xs-12 col-sm-12 col-md-12 col-lg-6">
   <div>
+
     <%= cl_image_tag(movie.photo, width:200, height: 300, :crop => :fill) %>
   </div>
   <div class="movie-list-details">
@@ -14,13 +15,15 @@
       <h5  class="movie-card-favorite" style="color:orange"><%= movie.favorites_count %><i class="fas fa-star"></i></h5>
     <% end %>
 
+
     <% if params["controller"] == "favorites" %>
       <% favorite = Favorite.where(user_id: @user.id, movie_id: movie.id).first %>
-      <%= link_to "Détails",  user_movie_favorite_path(@user, movie, favorite) %>
+      <%= link_to "Détails",  user_movie_favorite_path(@user, movie, favorite), class: "btn-green" %>
     <% elsif params["action"] == "new_movies" %>
-      <%= link_to "Détails", new_movies_movie_path(movie) %>
+      <%= link_to "Détails", new_movies_movie_path(movie), class: "btn-green" %>
     <% else %>
-      <%= link_to "Détails", movie_path(movie) %>
+      <%= link_to "Détails", movie_path(movie), class: "btn-green" %>
     <% end %>
+
   </div>
 </div>

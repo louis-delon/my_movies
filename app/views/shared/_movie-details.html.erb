@@ -1,6 +1,6 @@
 <div class="movie-card-details">
   <div>
-    <%= cl_image_tag(@photo, crop: :fill, class: "image") %>
+    <%= cl_image_tag(@photo, class: "image", crop: :fill) %>
   </div>
 
   <div class="movie-text">
@@ -9,24 +9,26 @@
     <% if @favorite.nil? %>
       <div class="favorite">
         <%= link_to user_movie_favorites_path(@user, @movie), method: :post, remote:true do  %>
-          <i class="far fa-heart" style="font-size:35px"></i>
+          <i class="far fa-heart" style="font-size:30px; color:#DE615F;"></i>
         <% end %>
       </div>
       <% else %>
       <div class="favorite">
         <%= link_to user_movie_favorite_path(@user, @movie, @favorite), method: :delete, remote:true do  %>
-          <i class="fas fa-heart" style="font-size:35px"></i>
+          <i class="fas fa-heart" style="font-size:30px; color:#DE615F;"></i>
         <% end %>
       </div>
     <% end %>
 
-    <h3>Date de sortie: <%= @movie.release_date.strftime("%d/%m/%Y") %></h3>
-    <h4>Ajouté par: <%= @movie.user.username %> le <%= @movie.created_at.strftime("%d/%m/%Y") %></h4>
-    <h4>Langue: <%= @movie.language %></h4>
+    <h2>Date de sortie: <%= @movie.release_date.strftime("%d/%m/%Y") %></h2>
+    <h3>Ajouté par <%= @movie.user.username %> | le <%= @movie.created_at.strftime("%d/%m/%Y") %></h3>
+    <h3>Langue: <%= @movie.language %></h3>
     <p><%= @movie.resume %></p>
     <% if @movie.user == @user %>
-      <%= link_to "Edit", edit_user_movie_path(@user, @movie)%>
-      <%= link_to "Destroy", user_movie_path(@user, @movie), method: :delete%>
+    <div class="btn-position">
+        <%= link_to "Edit", edit_user_movie_path(@user, @movie), class: "btn-green" %>
+        <%= link_to "Destroy", user_movie_path(@user, @movie), method: :delete, class: "button-red"%>
+    </div>
     <% end %>
   </div>
 </div>

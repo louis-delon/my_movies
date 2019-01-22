@@ -1,0 +1,12 @@
+.btn-green {
+  text-decoration: none;
+  color: $nice-green;
+  border: 1px solid $nice-green;
+  border-radius: 6px;
+  padding: 7px;
+  &:hover {
+    background-color: $nice-green;
+    color: white;
+    text-decoration: none;
+  }
+}
