@@ -12,7 +12,7 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
   validates :title, presence: true
-  validates :resume, presence: true
+  validates :resume, presence: true, length: { maximum: 930, too_long: "%{count} characters is the maximum allowed" }
   validates :photo, presence: true
 
   # scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }

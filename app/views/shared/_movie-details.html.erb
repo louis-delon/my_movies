@@ -21,14 +21,12 @@
     <% end %>
 
     <h2>Date de sortie: <%= @movie.release_date.strftime("%d/%m/%Y") %></h2>
-    <h3>Ajouté par <%= @movie.user.username %> | le <%= @movie.created_at.strftime("%d/%m/%Y") %></h3>
     <h3>Langue: <%= @movie.language %></h3>
+    <h4>Ajouté par <%= @movie.user.username %> | le <%= @movie.created_at.strftime("%d/%m/%Y") %></h4>
     <p><%= @movie.resume %></p>
     <% if @movie.user == @user %>
-    <div class="btn-position">
         <%= link_to "Edit", edit_user_movie_path(@user, @movie), class: "btn-green" %>
         <%= link_to "Destroy", user_movie_path(@user, @movie), method: :delete, class: "button-red"%>
-    </div>
     <% end %>
   </div>
 </div>

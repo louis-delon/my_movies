@@ -1,8 +1,8 @@
 <%= simple_form_for [@user, @movie] do |f| %>
   <%= f.error_notification %>
   <%= f.input :photo, as: :file , input_html: { onchange: 'window.previewFile()' }%>
-  <%= f.input :title %>
-  <%= f.input :resume %>
+  <%= f.input :title, label: "Titre" %>
+  <%= f.input :resume, input_html: { :maxlength => 930 }, label: "Résumé", hint: '930 caractères max' %>
   <%= f.input :release_date %>
   <%= f.input :language, collection: @languages %>
   <%= f.button :submit, "Enregistrer", class: "btn btn-outline-success"  %>

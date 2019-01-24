@@ -32,7 +32,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(params_movie)
     @movie.user = @user
-    if @movie.save!
+    if @movie.save
       redirect_to own_movies_path(@user)
     else
       render :new
