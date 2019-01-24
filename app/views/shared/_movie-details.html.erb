@@ -4,21 +4,23 @@
   </div>
 
   <div class="movie-text">
-    <h1><%= @movie.title %></h1>
-    <!-- this user has already this movie as a favorite -->
-    <% if @favorite.nil? %>
-      <div class="favorite">
-        <%= link_to user_movie_favorites_path(@user, @movie), method: :post, remote:true do  %>
-          <i class="far fa-heart" style="font-size:30px; color:#DE615F;"></i>
-        <% end %>
-      </div>
-      <% else %>
-      <div class="favorite">
-        <%= link_to user_movie_favorite_path(@user, @movie, @favorite), method: :delete, remote:true do  %>
-          <i class="fas fa-heart" style="font-size:30px; color:#DE615F;"></i>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="title-favorite-flexbox">
+      <h1><%= @movie.title %></h1>
+      <!-- this user has already this movie as a favorite -->
+      <% if @favorite.nil? %>
+        <div class="favorite">
+          <%= link_to user_movie_favorites_path(@user, @movie), method: :post, remote:true do  %>
+            <i class="far fa-heart" style="font-size:30px; color:#DE615F;"></i>
+          <% end %>
+        </div>
+        <% else %>
+        <div class="favorite">
+          <%= link_to user_movie_favorite_path(@user, @movie, @favorite), method: :delete, remote:true do  %>
+            <i class="fas fa-heart" style="font-size:30px; color:#DE615F;"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
     <h2>Date de sortie: <%= @movie.release_date.strftime("%d/%m/%Y") %></h2>
     <h3>Langue: <%= @movie.language %></h3>
