@@ -1,5 +1,5 @@
 .full-page {
-  min-height: calc(100vh - 262px);
+  min-height: calc(100vh - 282px);
   margin-bottom: 0px !important;
 }
 
@@ -7,4 +7,12 @@
   .full-page {
       min-height: 1000px;
   }
+}
+
+.back-btn {
+  color: $orange;
+  margin-left: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 14px;
 }
