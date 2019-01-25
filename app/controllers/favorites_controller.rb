@@ -40,6 +40,7 @@ class FavoritesController < ApplicationController
 
   private
 
+  # each favorite is saved in db when created
   def instantiate_favorite
     @favorite = Favorite.new
     @favorite.user = @user

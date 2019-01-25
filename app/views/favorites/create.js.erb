@@ -1,4 +1,4 @@
-var favorite = document.querySelector(".favorite")
+var favorite = document.querySelector(".favorite-icon")
 
 favorite.innerHTML =
   `<%= link_to user_movie_favorite_path(current_user, @movie, @favorite), method: :delete, remote:true do  %>

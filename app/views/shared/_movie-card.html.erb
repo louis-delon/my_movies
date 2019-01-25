@@ -21,6 +21,8 @@
       <%= link_to "Détails",  user_movie_favorite_path(@user, movie, favorite), class: "btn-green" %>
     <% elsif params["action"] == "new_movies" %>
       <%= link_to "Détails", new_movies_movie_path(movie), class: "btn-green" %>
+    <% elsif params["action"] == "own_movies" %>
+      <%= link_to "Détails", own_movies_show_path(@user, movie), class: "btn-green" %>
     <% else %>
       <%= link_to "Détails", movie_path(movie), class: "btn-green" %>
     <% end %>
